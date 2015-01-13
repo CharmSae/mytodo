@@ -32,14 +32,14 @@ body {
 }
 
 /* Customize container */
-@media (min-width: 768px) {
+/*@media (min-width: 768px) {
   .container {
     max-width: 730px;
   }
 }
 .container-narrow > hr {
   margin: 30px 0;
-}
+}*/
 
 /* Main marketing message and sign up button */
 .jumbotron {
@@ -76,4 +76,53 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+}
+
+form input, textarea {
+  border-radius: 4px;
+  font-size: 18px;
+  margin: 0 10px 10px 0;
+  border: 1px solid #bbb;
+  background: white;
+  padding: 8px;
+}
+
+form input[type=submit]:hover {
+  opacity: 0.95;
+}
+
+ul, li {
+  padding: 0; 
+  border: 0;
+  list-style-type: none;
+}
+
+.nav-pills li a{
+  color: #AC005F;
+  text-decoration: none;
+}
+
+.nav-pills li a:hover{
+  color: white;
+  background: #AC005F;
+  text-decoration: none;
+  opacity: 0.95;
+}
+
+.nav-pills li.active a{
+  color: white;
+  background: #AC005F;
+  text-decoration: none;
+}
+
+.nav-pills li.active a:hover{
+  color: white;
+  background: #AC005F;
+  text-decoration: none;
+}
+
+.active {
+  color: white;
+  background: #AC005F;
+  text-decoration: none;
 }

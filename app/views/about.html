@@ -1,1 +1,106 @@
-<p>This is the about view.</p>
+<div class="container" ng-controller="TabController as tab">
+	<h2>Popular Place</h2>
+	<ul class="nav nav-pills">
+	  <li role="presentation" ng-class="{active:tab.isSet(1)}"><a href="" ng-click="tab.setTab(1)">United States</a></li>
+	  <li role="presentation" ng-class="{active:tab.isSet(2)}"><a href="" ng-click="tab.setTab(2)">Europe</a></li>
+	  <li role="presentation" ng-class="{active:tab.isSet(3)}"><a href="" ng-click="tab.setTab(3)">East Asia</a></li>
+	</ul>
+	<br/>
+	<div class="row" ng-show="tab.isSet(1)" ui-sortable >
+		<div class="col-md-4" ng-repeat="city in category1_cities">
+			<div class="thumbnail" style="padding:5px 10px; cursor:move;" ng-controller="TabController as subTab">
+				<img src="{{city.image}}" alt="...">
+				<div class="caption">
+					<h3>{{city.name}}</h3>
+					<p>{{city.description}}</p>
+
+					<ul class="nav nav-pills">
+						<li ng-class="{ active:subTab.isSet(1) }">
+						<a href="" ng-click="subTab.setTab(1)">Description</a>
+						</li>
+						<li ng-class="{ active:subTab.isSet(2) }">
+						<a href="" ng-click="subTab.setTab(2)">Price</a>
+						</li>
+						<li ng-class="{ active:subTab.isSet(3) }">
+						<a href="" ng-click="subTab.setTab(3)">Reviews</a>
+						</li>
+					</ul>
+
+					<div ng-show="subTab.isSet(1)">
+						<h4>Description</h4>
+						<blockquote>{{city.description}}</blockquote>
+					</div>
+					<div ng-show="subTab.isSet(2)">
+						<h4>Price</h4>
+						<blockquote>{{city.price | currency}} </blockquote>
+					</div>
+					<!--  Review Tab's Content  -->
+					<div ng-show="subTab.isSet(3)">
+					<!--  Product Reviews List -->
+						<ul>
+							<h4>Reviews</h4>
+							<li ng-repeat="review in city.reviews">
+								<blockquote>
+									<strong>{{review.stars}} Stars</strong>
+									{{review.body}}                  
+									<cite class="clearfix">{{review.author}} on {{review.createdOn | date}}</cite>
+								</blockquote>
+							</li>
+						</ul>
+
+						<!--  Review Form -->
+						<form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewCtrl.addReview(city)">
+						<!--  Live Preview -->
+						<blockquote>
+							<strong>{{reviewCtrl.review.stars}} Stars</strong>
+							{{reviewCtrl.review.body}}                  
+							<cite class="clearfix">—{{reviewCtrl.review.author}}</cite>
+						</blockquote>
+
+						<!--  Review Form -->
+						<h4>Submit a Review</h4>
+							<fieldset class="form-group">
+								<select ng-model="reviewCtrl.review.stars" class="form-control" ng-options="stars for stars in [5,4,3,2,1]"  title="Stars" >
+								<option value="">Rate this city</option>
+								</select>
+							</fieldset>
+							<fieldset class="form-group">
+								<textarea ng-model="reviewCtrl.review.body" class="form-control" placeholder="Write a short review" title="Review"></textarea>
+							</fieldset>
+							<fieldset class="form-group">
+								<input ng-model="reviewCtrl.review.author" type="email" class="form-control" placeholder="example@example.org" title="Email" />
+							</fieldset>
+							<fieldset class="form-group">
+								<input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
+							</fieldset>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row" ng-show="tab.isSet(2)" ui-sortable >
+		<div class="col-md-4" ng-repeat="city in category2_cities">
+			<div class="thumbnail" style="padding:5px 10px; cursor:move;">
+				<img src="{{city.image}}" alt="...">
+				<div class="caption">
+					<h3>{{city.name}}</h3>
+					<p>{{city.description}}</p>
+					<p><a href="" class="btn btn-primary" role="button">Button</a> <a href="" class="btn btn-default" role="button">Button</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row" ng-show="tab.isSet(3)" ui-sortable >
+		<div class="col-md-4" ng-repeat="city in category3_cities">
+			<div class="thumbnail" style="padding:5px 10px; cursor:move;">
+				<img src="{{city.image}}" alt="...">
+				<div class="caption">
+					<h3>{{city.name}}</h3>
+					<p>{{city.description}}</p>
+					<p><a href="" class="btn btn-primary" role="button">Button</a> <a href="" class="btn btn-default" role="button">Button</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

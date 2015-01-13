@@ -8,7 +8,7 @@
  *
  * Main module of the application.
  */
-angular
+var app =angular
   .module('mytodoApp', [
     'ngAnimate',
     'ngCookies',
@@ -19,11 +19,11 @@ angular
     'ui.sortable',
     'LocalStorageModule'
   ])
-  .config(['localStorageServiceProvider', function(localStorageServiceProvider){
+app.config(['localStorageServiceProvider', function(localStorageServiceProvider){
     localStorageServiceProvider.setPrefix('ls');
   }])
 
-  .config(function ($routeProvider) {
+app.config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -33,7 +33,38 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
+      .when('/contact', {
+        templateUrl: 'views/contact.html',
+        controller: 'AboutCtrl'
+      })
+      .when('/contact', {
+        templateUrl: 'views/contact.html',
+        controller: 'AboutCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
+  });
+
+ app.controller('TabController', function(){
+    this.tab = 1;
+
+    this.setTab = function(newValue){
+      this.tab = newValue;
+    };
+
+    this.isSet = function(tabName){
+      return this.tab === tabName;
+    };
+  });
+
+ app.controller('ReviewController', function() {
+    this.review = {};
+
+    this.addReview = function(city) {
+      this.review.createdOn = Date.now();
+      city.reviews.push(this.review);
+
+      this.review = {};
+    };
   });
