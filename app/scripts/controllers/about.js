@@ -12,7 +12,7 @@ angular.module('mytodoApp')
 
   	//These are from database
 
-    $scope.category1_cities = [{
+    $scope.category1Cities = [{
     	name: 'New York',
     	description: 'New York description here New York description here New York description here',
     	image: 'http://placehold.it/450x350',
@@ -20,18 +20,18 @@ angular.module('mytodoApp')
     	price: '600',
     	reviews: [{
     		stars: 3,
-    		body: "I love this city!",
-    		author: "tim@example.org",
+    		body: 'I love this city!',
+    		author: 'tim@example.org',
     		createdOn: '2015-01-12'
     	},{
     		stars: 3,
-    		body: "I love this city!",
-    		author: "tim@example.org",
+    		body: 'I love this city!',
+    		author: 'tim@example.org',
     		createdOn: '2015-01-12'
     	},{
     		stars: 3,
-    		body: "I love this city!",
-    		author: "tim@example.org",
+    		body: 'I love this city!',
+    		author: 'tim@example.org',
     		createdOn: '2015-01-12'
     	}]
     },{
@@ -42,18 +42,18 @@ angular.module('mytodoApp')
     	price: '800',
     	reviews: [{
     		stars: 3,
-    		body: "I love this city!",
-    		author: "tim@example.org",
+    		body: 'I love this city!',
+    		author: 'tim@example.org',
     		createdOn: '2015-01-12'
     	},{
     		stars: 3,
-    		body: "I love this city!",
-    		author: "tim@example.org",
+    		body: 'I love this city!',
+    		author: 'tim@example.org',
     		createdOn: '2015-01-12'
     	},{
     		stars: 3,
-    		body: "I love this city!",
-    		author: "tim@example.org",
+    		body: 'I love this city!',
+    		author: 'tim@example.org',
     		createdOn: '2015-01-12'
     	}]
     },{
@@ -64,23 +64,23 @@ angular.module('mytodoApp')
     	price: '500',
     	reviews: [{
     		stars: 3,
-    		body: "I love this city!",
-    		author: "tim@example.org",
+    		body: 'I love this city!',
+    		author: 'tim@example.org',
     		createdOn: '2015-01-12'
     	},{
     		stars: 3,
-    		body: "I love this city!",
-    		author: "tim@example.org",
+    		body: 'I love this city!',
+    		author: 'tim@example.org',
     		createdOn: '2015-01-12'
     	},{
     		stars: 3,
-    		body: "I love this city!",
-    		author: "tim@example.org",
+    		body: 'I love this city!',
+    		author: 'tim@example.org',
     		createdOn: '2015-01-12'
     	}]
     }];
 
-    $scope.category2_cities = [{
+    $scope.category2Cities = [{
     	name: 'Paris',
     	description: 'Paris description here Paris description here Paris description here Paris description here',
     	image: 'http://placehold.it/450x350',
@@ -97,7 +97,7 @@ angular.module('mytodoApp')
     	link: ''
     }];
 
-    $scope.category3_cities = [{
+    $scope.category3Cities = [{
     	name: 'Tokyo',
     	description: 'Tokyo description here Tokyo description here Tokyo description here Tokyo description here',
     	image: 'http://placehold.it/450x350',

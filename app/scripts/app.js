@@ -18,10 +18,10 @@ var app =angular
     'ngTouch',
     'ui.sortable',
     'LocalStorageModule'
-  ])
+  ]);
 app.config(['localStorageServiceProvider', function(localStorageServiceProvider){
     localStorageServiceProvider.setPrefix('ls');
-  }])
+  }]);
 
 app.config(function ($routeProvider) {
     $routeProvider

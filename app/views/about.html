@@ -6,8 +6,8 @@
 	  <li role="presentation" ng-class="{active:tab.isSet(3)}"><a href="" ng-click="tab.setTab(3)">East Asia</a></li>
 	</ul>
 	<br/>
-	<div class="row" ng-show="tab.isSet(1)" ui-sortable >
-		<div class="col-md-4" ng-repeat="city in category1_cities">
+	<div class="row" ng-show="tab.isSet(1)" ui-sortable>
+		<div class="col-md-4" ng-repeat="city in category1Cities">
 			<div class="thumbnail" style="padding:5px 10px; cursor:move;" ng-controller="TabController as subTab">
 				<img src="{{city.image}}" alt="...">
 				<div class="caption">
@@ -80,7 +80,7 @@
 		</div>
 	</div>
 	<div class="row" ng-show="tab.isSet(2)" ui-sortable >
-		<div class="col-md-4" ng-repeat="city in category2_cities">
+		<div class="col-md-4" ng-repeat="city in category2Cities">
 			<div class="thumbnail" style="padding:5px 10px; cursor:move;">
 				<img src="{{city.image}}" alt="...">
 				<div class="caption">
@@ -92,7 +92,7 @@
 		</div>
 	</div>
 	<div class="row" ng-show="tab.isSet(3)" ui-sortable >
-		<div class="col-md-4" ng-repeat="city in category3_cities">
+		<div class="col-md-4" ng-repeat="city in category3Cities">
 			<div class="thumbnail" style="padding:5px 10px; cursor:move;">
 				<img src="{{city.image}}" alt="...">
 				<div class="caption">
